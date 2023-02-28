@@ -22,6 +22,7 @@ jobs:
 
     - name: Build
       run: |
+        go mod download
         go build app.go
         tar czf unraid-plugin-luks-decryption.tar.gz app
  
