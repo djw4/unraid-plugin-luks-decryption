@@ -105,6 +105,7 @@ func main() {
 
 	input := &ssm.GetParameterInput{
 		Name: aws.String(*pParamPath),
+		WithDecryption: func() *bool { b := true; return &b }(),
 	}
 
 	results, err := findParameter(context.TODO(), ssmClient, input)
